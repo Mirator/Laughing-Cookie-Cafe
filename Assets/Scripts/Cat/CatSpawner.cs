@@ -7,7 +7,7 @@ public class CatSpawner : MonoBehaviour
     public Transform doorPosition;
     private AudioSource audioSource;
     public float minSpawnTime = 1f;
-    public float maxSpawnTime = 10f;
+    public float maxSpawnTime = 5f;
 
     void Start()
     {
