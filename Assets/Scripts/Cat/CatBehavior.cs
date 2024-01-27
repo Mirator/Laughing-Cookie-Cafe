@@ -8,6 +8,7 @@ public class CatBehavior : MonoBehaviour
     private bool isPlayerNear = false;
     private bool isHappy = false;
     private bool isAtSpot = false;
+    private bool isLeaving = false;
     private int timesFed = 0;
     private int requiredFeedings;
     private float unhappyTimer = 0f;
@@ -23,7 +24,7 @@ public class CatBehavior : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.Space) && !isHappy && isAtSpot)
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.Space) && !isHappy && isAtSpot && !isLeaving)
         {
             FeedCat();
         }
@@ -85,11 +86,13 @@ public class CatBehavior : MonoBehaviour
 
     void LeaveCafeHappy()
     {
+        isLeaving = true;
         catMovement.LeaveCafe();
     }
 
     void LeaveCafeUnhappy()
     {
+        isLeaving = true;
         catMovement.LeaveCafe();
     }
 
