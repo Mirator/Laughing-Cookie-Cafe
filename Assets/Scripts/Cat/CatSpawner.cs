@@ -6,7 +6,7 @@ public class CatSpawner : MonoBehaviour
     public GameObject catPrefab;
     public Transform doorPosition;
     public float minSpawnTime = 1f;
-    public float maxSpawnTime = 5f;
+    public float maxSpawnTime = 10f;
 
     void Start()
     {

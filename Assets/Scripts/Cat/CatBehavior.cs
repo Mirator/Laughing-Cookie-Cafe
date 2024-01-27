@@ -65,16 +65,14 @@ public class CatBehavior : MonoBehaviour
             spriteRenderer.sprite = happySprite;
             GameManager.Instance.CookieAmount--;
             happyTimer = Random.Range(5f, 60f); // Set how long the cat stays happy
-
+            GameManager.Instance.AddScoreForFeedingCat(timesFed);
             if (timesFed >= requiredFeedings)
             {
                 LeaveCafeHappy(); // Leave happily after enough feedings
             }
         }
-        else
-        {
-            Debug.Log("No cookies available");
-        }
+
+
     }
 
     void MakeCatUnhappy()
@@ -93,6 +91,7 @@ public class CatBehavior : MonoBehaviour
     void LeaveCafeUnhappy()
     {
         isLeaving = true;
+        GameManager.Instance.SubtractScoreForUnhappyLeave();
         catMovement.LeaveCafe();
     }
 

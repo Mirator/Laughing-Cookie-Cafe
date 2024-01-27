@@ -4,12 +4,11 @@ public class GameManager : MonoBehaviour
 {
     
     private int totalCatsAmounts;
-    private int catsRemaining;
-
     private int cookieAmount;
+    private int score;
 
     public Transform exitPoint;
-    public TextMeshProUGUI winningMessageText; 
+    public TextMeshProUGUI scoreText;
     private static GameManager _instance;
 
     public static GameManager Instance
@@ -40,22 +39,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int CatsRemaining
-    {
-        get { return catsRemaining; }
-        set
-        {
-            if (value >= 0)
-            {
-                catsRemaining= value;
-            }
-            else
-            {
-                Debug.LogError("catsRemaining cannot be negative.");
-            }
-        }
-    }
-
     public int CookieAmount
     {
         get { return cookieAmount; }
@@ -72,6 +55,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int Score
+    {
+        get { return score; }
+        set 
+        { 
+            score = Mathf.Max(0, value); 
+            UpdateScoreUI();
+        }
+    }
+
+    void UpdateScoreUI()
+{
+    if (scoreText != null)
+    {
+        scoreText.text = "Score: " + Score.ToString();
+    }
+}
     private void Awake()
     {
         if (_instance == null)
@@ -79,9 +79,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            // Set initial cats amount to 20
-            totalCatsAmounts = 20;
-            catsRemaining = 20;
 
             // no cookies at start
             cookieAmount = 0;
@@ -90,36 +87,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (winningMessageText != null)
-            winningMessageText.gameObject.SetActive(false);
     }
 
-    void Update()
+
+    public void AddScoreForFeedingCat(int timesFed)
     {
-        CheckWinCondition();
+        Score += 5 * timesFed; // 3 points times the number of times the cat has been fed
     }
 
-    private void CheckWinCondition()
+    public void SubtractScoreForUnhappyLeave()
     {
-        if (catsRemaining == 0)
-        {
-
-            ShowWinningMessage();
-        }
-    }
-
-    private void ShowWinningMessage()
-    {
-        if (winningMessageText != null)
-        {
-            winningMessageText.gameObject.SetActive(true);
-            winningMessageText.text = "You Won!";
-            Debug.Log("Vyhra!");
-        }
-        else
-        {
-            Debug.LogError("Winning message text is not assigned in the inspector.");
-        }
+        Score -= 5; // Subtract 10 points for unhappy leave
     }
 }
