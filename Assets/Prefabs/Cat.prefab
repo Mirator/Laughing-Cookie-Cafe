@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 89328477149402115}
   - component: {fileID: 6786798784165560902}
   - component: {fileID: 5682649686634155860}
+  - component: {fileID: -3663384744486014401}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.16, y: 2.38, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e6be025bf154968b9b00c50c71a81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: f4cc09252b29c4c9882e524c2d01263a, type: 3}
+  happySprite: {fileID: 21300000, guid: f4cc09252b29c4c9882e524c2d01263a, type: 3}
+  defaultSprite: {fileID: 21300000, guid: fba42034f2148491d97218b8e2673972, type: 3}
 --- !u!212 &6786798784165560902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,8 +87,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 850399025
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fba42034f2148491d97218b8e2673972, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -144,3 +146,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &-3663384744486014401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013466058731753333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cef7d684569e4880a6f997b1db0f816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  exitPoint: {fileID: 0}

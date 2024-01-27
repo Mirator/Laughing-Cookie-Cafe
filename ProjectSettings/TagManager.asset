@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CatSpot
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 234220925
+    locked: 0
+  - name: Floor
+    uniqueID: 3517327077
+    locked: 0
+  - name: Wall
+    uniqueID: 3943124459
+    locked: 0
+  - name: Objects
+    uniqueID: 2952511107
+    locked: 0
+  - name: Cats
+    uniqueID: 850399025
+    locked: 0
+  - name: Player
+    uniqueID: 2567353261
+    locked: 0
+  - name: Foreground
+    uniqueID: 3040196717
     locked: 0

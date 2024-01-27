@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     private int cookieAmount;
 
+    public Transform exitPoint;
     public TextMeshProUGUI winningMessageText; 
     private static GameManager _instance;
 
