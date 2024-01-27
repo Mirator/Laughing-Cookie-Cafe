@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6786798784165560902}
   - component: {fileID: 5682649686634155860}
   - component: {fileID: -3663384744486014401}
+  - component: {fileID: -5940590071730884418}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.16, y: 2.38, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e6be025bf154968b9b00c50c71a81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happySprite: {fileID: 21300000, guid: f4cc09252b29c4c9882e524c2d01263a, type: 3}
-  defaultSprite: {fileID: 21300000, guid: fba42034f2148491d97218b8e2673972, type: 3}
+  happySprite: {fileID: 21300000, guid: 7a25be6d66ab448239445ec44c245a8d, type: 3}
+  defaultSprite: {fileID: 21300000, guid: bca2f40185d2d47cc8a8be39cbe9dbb2, type: 3}
 --- !u!212 &6786798784165560902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 850399025
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fba42034f2148491d97218b8e2673972, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bca2f40185d2d47cc8a8be39cbe9dbb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,18 +134,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.036374092, y: 0.047213554}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 0.9275341, y: 0.9698739}
   m_EdgeRadius: 0
 --- !u!114 &-3663384744486014401
 MonoBehaviour:
@@ -159,4 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  exitPoint: {fileID: 0}
+--- !u!114 &-5940590071730884418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013466058731753333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780bffcec8f4448b99a82445cabd90c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
