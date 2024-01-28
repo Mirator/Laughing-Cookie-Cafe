@@ -37,7 +37,7 @@ public class CatBehavior : MonoBehaviour
                 MakeCatUnhappy();
             }
         }
-        else
+        else if (!isLeaving) // Check if the cat is not already leaving
         {
             unhappyTimer += Time.deltaTime;
             if (unhappyTimer >= Random.Range(5f, 60f)) // Unhappy leave timer
@@ -46,7 +46,6 @@ public class CatBehavior : MonoBehaviour
             }
         }
     }
-
     public void SetAtSpot(bool status)
     {
         isAtSpot = status;
@@ -90,9 +89,12 @@ public class CatBehavior : MonoBehaviour
 
     void LeaveCafeUnhappy()
     {
-        isLeaving = true;
-        GameManager.Instance.SubtractScoreForUnhappyLeave();
-        catMovement.LeaveCafe();
+        if (!isLeaving) // Ensure this method runs only once
+        {
+            isLeaving = true;
+            GameManager.Instance.SubtractScoreForUnhappyLeave();
+            catMovement.LeaveCafe();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

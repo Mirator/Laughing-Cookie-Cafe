@@ -60,7 +60,8 @@ public class GameManager : MonoBehaviour
         get { return score; }
         set 
         { 
-            score = Mathf.Max(0, value); 
+            //score = Mathf.Max(0, value); 
+            score = value;
             UpdateScoreUI();
         }
     }
