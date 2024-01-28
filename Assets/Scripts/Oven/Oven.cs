@@ -33,7 +33,6 @@ public class Oven : MonoBehaviour
         // When the player is near the oven and the cookies are ready
         if (playerInTrigger && !isBaking && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Bere to mezernik!");
             // Player collects the cookies
             GameManager.Instance.CookieAmount += 5;
             isBaking = true; // Start baking next batch
