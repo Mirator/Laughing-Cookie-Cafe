@@ -9,11 +9,13 @@ public class Oven : MonoBehaviour
     private bool isBaking = false; // Start with oven not baking
     private bool playerInTrigger = false; // Flag to check if the player is in the trigger zone
     private float bakingTimer = 10f;
+    private AudioSource audioSource; 
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = readySprite; // Set the sprite to ready at the beginning
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,6 +29,11 @@ public class Oven : MonoBehaviour
                 // When the timer hits zero, cookies are ready
                 isBaking = false;
                 spriteRenderer.sprite = readySprite;
+                // Play the sound
+                if (audioSource && audioSource.clip)
+                {
+                    audioSource.Play();
+                }
             }
         }
 

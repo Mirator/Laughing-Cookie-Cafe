@@ -13,6 +13,7 @@ public class CatBehavior : MonoBehaviour
     private int requiredFeedings;
     private float unhappyTimer = 0f;
     private float happyTimer = 0f; // Timer for how long the cat stays happy
+    private AudioSource audioSource; // Reference to the AudioSource component
     private CatMovement catMovement;
 
     void Start()
@@ -20,6 +21,7 @@ public class CatBehavior : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         catMovement = GetComponent<CatMovement>();
         requiredFeedings = Random.Range(1, 4); // Randomly determine required feedings between 1 and 3
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
     }
 
     void Update()
@@ -63,6 +65,11 @@ public class CatBehavior : MonoBehaviour
             isHappy = true;
             spriteRenderer.sprite = happySprite;
             GameManager.Instance.CookieAmount--;
+            // Play the sound
+            if (audioSource && audioSource.clip)
+            {
+                audioSource.Play();
+            }
             happyTimer = Random.Range(5f, 60f); // Set how long the cat stays happy
             GameManager.Instance.AddScoreForFeedingCat(timesFed);
             if (timesFed >= requiredFeedings)
