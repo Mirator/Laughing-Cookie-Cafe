@@ -35,7 +35,7 @@ public class Oven : MonoBehaviour
         {
             Debug.Log("Bere to mezernik!");
             // Player collects the cookies
-            GameManager.Instance.CookieAmount += 10;
+            GameManager.Instance.CookieAmount += 5;
             isBaking = true; // Start baking next batch
             spriteRenderer.sprite = bakingSprite;
             bakingTimer = 10f; // Reset the timer when starting the next batch
