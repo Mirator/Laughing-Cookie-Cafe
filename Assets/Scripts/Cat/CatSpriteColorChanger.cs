@@ -7,15 +7,16 @@ public class CatSpriteColorChanger : MonoBehaviour
     {
         new Color(0.8f, 0.6f, 0.4f),  // Beige
         new Color(0.5f, 0.3f, 0.1f),  // Brown
-        Color.black,                   // Black
+        new Color(0.3f, 0.2f, 0.1f),  // Dark Brown
         Color.white,                   // White
         Color.gray,                    // Gray
         new Color(1f, 0.8f, 0.6f),     // Cream
         new Color(0.1f, 0.1f, 0.1f),   // Charcoal
         new Color(0.6f, 0.5f, 0.4f),   // Chocolate
         new Color(0.8f, 0.8f, 0.8f),   // Light Gray
-        new Color(0.9f, 0.6f, 0.2f)    // Ginger
+        new Color(0.9f, 0.6f, 0.2f),   // Ginger
     };
+
 
     void Start()
     {
